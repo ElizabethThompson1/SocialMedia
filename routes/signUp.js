@@ -1,13 +1,13 @@
-const {  User,  validateUser, } = require('../models/SocialMedia')
+const {  SignUp,  validateSignUp, } = require('../models/SignUpSchema')
 const express = require("express");
 const router = express.Router();
 
-router.get("/:userId",async (req,res) =>{
+router.get("/:signUp",async (req,res) =>{
     try{
-        const user = await user.find({userId: req.params.userId});
+        const user = await user.find({userId: req.params.signUp});
 
         if (!user)
-            return res.status(400).send(`There are no comments with user id ${req.params.userId}.`);
+            return res.status(400).send(`There are no comments with user id ${req.params.signUp}.`);
 
         return res.send(user);
 
