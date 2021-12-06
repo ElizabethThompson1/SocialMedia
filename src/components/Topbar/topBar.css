@@ -1,7 +1,7 @@
 .topbarContainer{
     height: 50px;
     width: 100%;
-background-color: #1877f2;
+background-color: black;
 display: flex;
 align-items: center;
 position: sticky;
@@ -38,7 +38,7 @@ top: 0;
     margin-left: 10px;
 }
 
-.searchiInput{
+.searchInput{
     border: none;
     width: 70%;
 }
@@ -78,9 +78,17 @@ top: 0;
     border-radius: 50%;
     color: white;
     position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .topbarImg{
     width: 32px;
     height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
 }
