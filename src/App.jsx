@@ -3,16 +3,16 @@ import Login from "./Pages/Login/Login";
 import Profile from "./Pages/Profile/Profile";
 import Register from "./Pages/Register/Register";
 import {
-    BrowserRouter as Router,
+    BrowserRouter as Route,
     Switch,
-    Route
+    
 } from "react-router-dom";
 
-function App() {
+ function App() {
     return(
         <Router>
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/">;
                     <Home/>
                 </Route>
                 <Route path="/login">
@@ -28,3 +28,5 @@ function App() {
         </Router>
     );
 }
+
+export default App;
