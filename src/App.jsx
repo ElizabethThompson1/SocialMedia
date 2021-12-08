@@ -1,5 +1,3 @@
-import Home from "./Pages/Home/Home";
-import Login from "./Pages/Login/Login";
 // import Profile from "./Pages/Profile/Profile";
 // import Register from "./Pages/Register/Register";
 import { Switch, Route} from "react-router-dom";
@@ -50,5 +48,4 @@ class App extends Component {
         );
     }
 }
-
 export default App;

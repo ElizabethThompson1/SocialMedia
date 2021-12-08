@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 // import "./rightbar.css"
 // import Online from "./Online/Online";
+=======
+import "./rightbar.css";
+import Online from "../Online/Online";
+>>>>>>> 20a50f29a0768496bee8d7634a38dba04b720fc3
 
 
 // export default function Rightbar({profile}){

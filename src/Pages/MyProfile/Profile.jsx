@@ -1,7 +1,7 @@
 import"./myProfile.css"
-import TopBar from "./TopBar/topBar";
-import sidebar from "./Sidebar/sidebar";
-import Feed from "./Feed/feed";
+import Topbar from "../../components/topbar/topBar"
+import Sidebar from "../../components/sidebar/Sidebar";
+// import Feed from "./Feed/feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import { useEffect,useState } from "react";
 import axios from "axios"

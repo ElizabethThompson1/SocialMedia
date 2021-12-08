@@ -1,4 +1,3 @@
-import "./topBar.css"
 import {Search, Person, Chat, Notifications}from "@material-ui/icons"
 import React from "react";
 
@@ -31,6 +30,7 @@ function topBar({user}){
                     </React.Fragment>                   
                 }
             </ul>
+
         </div>
     );
 }
