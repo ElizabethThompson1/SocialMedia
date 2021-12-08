@@ -1,5 +1,5 @@
-import "./rightbar.css"
-import Online from "./Online/Online";
+import "./rightbar.css";
+import Online from "../Online/Online";
 
 
 export default function Rightbar({profile}){

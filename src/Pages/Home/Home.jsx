@@ -1,6 +1,6 @@
-import TopBar from "../../components/Topbar/topBar";
+import topBar from "../../components/topbar/topBar";
 import Sidebar from "../../components/sidebar/Sidebar";
-import Feed from "../../components/feed/Feed";
+import Feed from "../../components/feed/feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import "./home.css"
 
@@ -8,7 +8,7 @@ import "./home.css"
  function Home(){
     return(
      <>
-        <TopBar />
+        <topBar />
         <div className="homecontainer">
         <Sidebar/>
         <Feed/>

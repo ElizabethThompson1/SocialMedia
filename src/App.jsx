@@ -1,17 +1,17 @@
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
-import Profile from "./Pages/Profile/Profile";
+import Profile from "./Pages/MyProfile/Profile";
 import Register from "./Pages/Register/Register";
 import {
     BrowserRouter as Route,
-    Switch,
+    Routes,
     
 } from "react-router-dom";
 
  function App() {
     return(
-        <Router>
-            <Switch>
+        <Switch>
+            <Routes>
                 <Route exact path="/">;
                     <Home/>
                 </Route>
@@ -24,8 +24,8 @@ import {
                 <Route path="/profile/:username">
                     <Profile/>
                 </Route>
-            </Switch>
-        </Router>
+            </Routes>
+        </Switch>
     );
 }
 
