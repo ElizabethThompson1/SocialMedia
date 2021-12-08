@@ -4,6 +4,8 @@ import Login from "./Pages/Login/Login";
 // import Register from "./Pages/Register/Register";
 import { Switch, Route} from "react-router-dom";
 import React, {useState,Component} from "react";
+import topBar from  "./components/Topbar/topBar";
+import logOut from "./Pages/LogOut/LogOut"
 
 
 class App extends Component {
@@ -24,7 +26,7 @@ class App extends Component {
         const user = this.state.user;
         return(
             <div>
-            <NavigationBar user={user} />
+            <topBar user={user} />
             <div>
                 <Switch>
                     <Route path='/profile' render={props => {
@@ -32,16 +34,16 @@ class App extends Component {
                             return <Redirect to="/login" />;
 
                         } else {
-                            return <ProfileScreen {...props} user={user} />
+                            return <ProfileScreen {...props} jwt={jwt} />
                         }
                     }}
                  />
-                    <Route path="/register" component={RegisterScreen} />
-                    <Route path="/login" component={LoginScreen} />
-                    <Route path="/logout" component={Logout} />
-                    <Route path="/not-found" component={NotFound} />
-                    <Route path="/" exact component={HomeScreen} />
-                    <Redirect to="/not-found"/>
+                    {/* <Route path="/register" component={RegisterScreen} /> */}
+                    <Route path="/login" component={Login} />
+                    <Route path="/logout" component={logOut} user={user}/>
+                    {/* <Route path="/not-found" component={NotFound} /> */}
+                    <Route path="/" exact component={Home} />
+                    {/* <Redirect to="/not-found"/> */}
                 </Switch>
             </div>
         </div>
