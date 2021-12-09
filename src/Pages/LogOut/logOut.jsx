@@ -1,6 +1,6 @@
 import React from "react"
 
-const logOut=() =>{
+const LogOut=() =>{
 
     function logout(){
         localStorage.removeItem('token')
@@ -16,4 +16,4 @@ const logOut=() =>{
     )
 }
 
-export default logOut;
+export default LogOut;

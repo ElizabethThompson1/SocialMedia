@@ -1,51 +1,64 @@
 // import Profile from "./Pages/Profile/Profile";
 // import Register from "./Pages/Register/Register";
-import { Switch, Route} from "react-router-dom";
-import React, {useState,Component,Redirect} from "react";
-import topBar from  "./components/Topbar/topBar";
+import { Switch, Route, Redirect} from "react-router-dom";
+import React, { useState, Component } from "react";
+import TopBar from  "./components/Topbar/topBar";
 import LogOut from "./Pages/LogOut/logOut";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
-import Register from "./Pages/Register/Register";
+// import Register from "./Pages/Register/Register";
 // import Friends from "./components/Friends/friends";
+import jwt_decode from "jwt-decode";
 
 
 class App extends Component {
-     state={}
+    constructor(props){
+        super(props);
+        const jwt = localStorage.getItem('token');
+        try{
+            const decodedUser = jwt_decode(jwt);
+            this.state = {
+                user: decodedUser
+            }
+        } catch{
+            this.state = {
+                user: null
+            }
+        }
+    }
 
      componentDidMount(){
         const jwt = localStorage.getItem('token');
         try{
-            const user = jwtDecode(jwt);
-            this.useState({
-                user
+            const decodedUser = jwt_decode(jwt);
+            this.setState({
+                user: decodedUser
             });
         } catch{
+           
         }
         
 
-        }
+    }
         render(){
-        const user = this.state.user;
+        let user = this.state.user;
+        console.log(user)
         return(
             <div>
-            <topBar user={user} />
+            <TopBar user={user} />
             <div>
                 <Switch>
-                    <Route path='/' render={props => {
-                        if (!user){
-                            return <Redirect to="/login" />;
-
+                    <Route path='/' exact render={(props) => {
+                        if(!user){
+                            return <Redirect to='/login' />
                         } else {
-                            return <Home {...props} jwt={jwt} />
+                            return <Home {...props} />
                         }
-                    }}
-                 />
+                    }} />
                     {/* <Route path="/register" component={RegisterScreen} /> */}
                     <Route path="/login" component={Login} />
                     <Route path="/logout" component={LogOut} user={user}/>
                     {/* <Route path="/not-found" component={NotFound} /> */}
-                    <Route path="/" exact component={Home} />
                     {/* <Redirect to="/not-found"/> */}
                 </Switch>
             </div>

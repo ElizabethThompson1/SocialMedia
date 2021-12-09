@@ -1,32 +1,32 @@
 import React from 'react';
-import {link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import LogOut from '../../Pages/LogOut/logOut';
 
-
-function topBar({user}){
+function TopBar({user}){
     return(
         <div>
             {user && <h4>Welcome {user.username}</h4>}
             <ul>
                 <li>
-                    <link to='/'>Home</link>
+                    <Link to='/'>Home</Link>
                 </li>
                 <li>
-                    <link to='/friends'>Friends</link>
+                    <Link to='/friends'>Friends</Link>
                 </li>
                 {!user &&
                     <React.Fragment>
                         <li>
-                            <link to='/register'>Register</link>
+                            <Link to='/register'>Register</Link>
                         </li>
                         <li>
-                            <link to='/login'>Login</link>
+                            <Link to='/login'>Login</Link>
                         </li>
                     </React.Fragment>
                 }
                 {user &&
                     <React.Fragment>
                         <li>
-                            <link to='/logout'>Logout</link>
+                            <LogOut />
                         </li>
                     </React.Fragment>                   
                 }
@@ -36,4 +36,4 @@ function topBar({user}){
     );
 }
 
-export default  topBar;
+export default  TopBar;

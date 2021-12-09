@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import './login.css';
 
- function Login(props) {
+function Login(props) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -15,7 +15,7 @@ import './login.css';
 		});
 		console.log(response.data)
 		// Save token in local storage and refresh page
-		localStorage.setItem('token',response.data.token);
+		localStorage.setItem('token', response.data);
 		window.location = '/';
 	}
 
