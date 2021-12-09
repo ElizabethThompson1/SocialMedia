@@ -11,16 +11,14 @@ import Register from "./Pages/Register/Register";
 
 
 class App extends Component {
-     state={
-         user: null
-     }
+     state={}
 
      componentDidMount(){
         const jwt = localStorage.getItem('token');
         try{
-            const decodedUser = jwtDecode(jwt);
-            this.setState({
-                user: decodedUser
+            const user = jwtDecode(jwt);
+            this.useState({
+                user
             });
         } catch{
         }
