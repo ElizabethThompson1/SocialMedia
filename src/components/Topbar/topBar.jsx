@@ -1,38 +1,40 @@
-import {Search, Person, Chat, Notifications}from "@material-ui/icons"
-import React from "react";
 
-function topBar({user}){
-    return(
-        <div>
-            {user && <h4>Welcome {user.username}</h4>}
-            <ul>
-                <li>
-                    <Link to='/'>Home</Link>
-                </li>
-                <li>
-                    <Link to='/profile'>Profile</Link>
-                </li>
-                {!user &&
-                    <React.Fragment>
-                        <li>
-                            <Link to='/register'>Register</Link>
-                        </li>
-                        <li>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                    </React.Fragment>
-                }
-                {user &&
-                    <React.Fragment>
-                        <li>
-                            <Link to='/logout'>Logout</Link>
-                        </li>
-                    </React.Fragment>                   
-                }
-            </ul>
+// import React from 'react';
+// // import {link} from 'react-router-dom';
 
-        </div>
-    );
-}
 
-export default  topBar;
+// function topBar({user}){
+//     return(
+//         <div>
+//             {user && <h4>Welcome {user.username}</h4>}
+//             <ul>
+//                 <li>
+//                     <link to='/'>Home</link>
+//                 </li>
+//                 <li>
+//                     <link to='/friends'>Friends</link>
+//                 </li>
+//                 {!user &&
+//                     <React.Fragment>
+//                         <li>
+//                             <link to='/register'>Register</link>
+//                         </li>
+//                         <li>
+//                             <link to='/login'>Login</link>
+//                         </li>
+//                     </React.Fragment>
+//                 }
+//                 {user &&
+//                     <React.Fragment>
+//                         <li>
+//                             <link to='/logout'>Logout</link>
+//                         </li>
+//                     </React.Fragment>                   
+//                 }
+//             </ul>
+
+//         </div>
+//     );
+// }
+
+// export default  topBar;

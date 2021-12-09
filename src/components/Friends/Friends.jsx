@@ -1,12 +1,10 @@
-import "./closeFriends.css";
 
-
-export default function friends({user}) {
-    const PF = process.env
+ function friends(){
     return(
-        <li className="sidebarFriend">
-            <img className= "sidebarFriendImg" src={PF+user.profilePicture} alt=""/>
-            <span className="sidebarFriend">{user.username}</span>
-        </li>
+     <div>
+        <h1>friends page</h1>
+    </div>
+
     );
 }
+export default friends;
