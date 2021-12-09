@@ -4,7 +4,7 @@ const logOut=() =>{
 
     function logout(){
         localStorage.removeItem('token')
-        window.location = '/';
+        window.location = '/login';
     }
 
     return(

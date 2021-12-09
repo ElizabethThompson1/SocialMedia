@@ -1,8 +1,8 @@
 // import Profile from "./Pages/Profile/Profile";
 // import Register from "./Pages/Register/Register";
 import { Switch, Route} from "react-router-dom";
-import React, {useState,Component} from "react";
-// import topBar from  "./components/Topbar/topBar";
+import React, {useState,Component,Redirect} from "react";
+import topBar from  "./components/Topbar/topBar";
 import LogOut from "./Pages/LogOut/logOut";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
@@ -22,6 +22,7 @@ class App extends Component {
             });
         } catch{
         }
+        
 
         }
         render(){
@@ -31,7 +32,7 @@ class App extends Component {
             <topBar user={user} />
             <div>
                 <Switch>
-                    <Route path='/profile' render={props => {
+                    <Route path='/' render={props => {
                         if (!user){
                             return <Redirect to="/login" />;
 
