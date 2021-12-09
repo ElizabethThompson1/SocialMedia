@@ -15,6 +15,7 @@ import axios from 'axios';
 		console.log(response.data)
 		// Save token in local storage and refresh page
 		localStorage.setItem('token',response.data.token);
+		window.location = '/';
 	}
 
 

@@ -1,12 +1,18 @@
 import React from "react"
 
 const logOut=() =>{
+
+    function logout(){
+        localStorage.removeItem('token')
+        window.location = '/';
+    }
+
     return(
-        <Route>
+
              <div>
-                <button className = "LogOut-button" onClick= {localStorage.removeItem('token')}>LogOut</button>
+                <button className = "LogOut-button" onClick={logout}>LogOut</button>
             </div>
-         </Route>
+
     )
 }
 
