@@ -1,8 +1,7 @@
 // import Profile from "./Pages/Profile/Profile";
-// import Register from "./Pages/Register/Register";
 import { Switch, Route, Redirect} from "react-router-dom";
-import React, { useState, Component } from "react";
-import TopBar from  "./components/Topbar/topBar";
+import React, {  Component } from "react";
+ import TopBar from  "./components/Topbar/topBar";
 import LogOut from "./Pages/LogOut/logOut";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";

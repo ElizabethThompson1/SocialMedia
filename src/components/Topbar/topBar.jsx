@@ -7,9 +7,11 @@ function TopBar({user}){
         <div>
             {user && <h4>Welcome {user.username}</h4>}
             <ul>
+                
                 <li>
-                    <Link to='/'>Home</Link>
+                    <Link className="btn btn-dark" to='/'>Home</Link>
                 </li>
+                
                 <li>
                     <Link to='/friends'>Friends</Link>
                 </li>
@@ -37,3 +39,5 @@ function TopBar({user}){
 }
 
 export default  TopBar;
+
+

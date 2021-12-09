@@ -1,6 +1,7 @@
 import Login from "../Login/Login";
 import React, { useState } from "react";
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function register(){
     const [email, setEmail] = useState("");
@@ -10,14 +11,16 @@ function register(){
   
 	async function handleSubmit(event) {
 	  event.preventDefault();
-	  let response = await axios.post("http://localhost:5000/api/users/register",{
+      let registerObject = {
         name: Name,
 		email: email,
 		password: password
-		});
+		};
+        debugger;
+	  let response = await axios.post("http://localhost:5000/api/users/register", registerObject);
 		console.log(response.data)
 		// localStorage.setItem('token', response.data);
-		window.location = '/';
+		window.location = '/login';
 	}
     return(
         <div className="Register">
@@ -46,11 +49,15 @@ function register(){
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="form-control"
                 />
             <p>Create an account</p>
             <button type='submit' >Register</button>
             </div>
 		</form>
+        <Link to='/login'>
+            <button className="btn btn-primary">Already a user? Login Here</button>
+        </Link>
 	  </div>
 	);
 }
