@@ -51,7 +51,7 @@ class App extends Component {
                         if(!user){
                             return <Redirect to='/register' />
                         } else {
-                            return <Home {...props} />
+                            return <Home {...props} user={user} />
                         }
                     }} />
                     <Route path="/register" component={Register} />

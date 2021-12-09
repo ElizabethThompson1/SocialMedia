@@ -1,28 +1,37 @@
-//  import TopBar from "../../components/Topbar/topBar";
+// import TopBar from "../../components/Topbar/topBar";
 // import Sidebar from "../../components/sidebar/Sidebar";
 // import Feed from "../../components/feed/Feed";
 // import Rightbar from "../../components/rightbar/Rightbar";
 // import "./home.css"
+// import Login from "../Login/Login";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
- function Home(){
-    
-   async function handleSubmit(event) {
-      event.preventDefault();
-      let response = await axios.post("http://localhost:5000/api/users/login",{
-       email: email,
-       password: password
-       });
+function Home(){
+   const [userProfile, setUserProfile] = useState(null)
+
+   useEffect(() => {
+      getCurrentUser()
+   }, [])
+
+
+   async function getCurrentUser(event) {
+      const jwt = localStorage.getItem('token');
+      let configObject = {
+         headers: {
+            'x-auth-token': jwt
+         }
+      }
+      let response = await axios.get(`http://localhost:5000/api/users/current`, configObject)
+      setUserProfile(response.data)
        console.log(response.data)
-       // Save token in local storage and refresh page
-       localStorage.setItem('token', response.data);
-       window.location = '/';
-    }
+   }
  
 
 
     return(
      <div>
-        <h1>Profile</h1>
+        <h1>Name: {userProfile.name}</h1>
     </div>
 
     );
