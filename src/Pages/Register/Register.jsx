@@ -1,21 +1,57 @@
+import Login from "../Login/Login";
+import React, { useState } from "react";
+import axios from 'axios';
 
-//  function register(){
-//     return(
-//      <div>
-//          <form>
-//              <h1>Register</h1>
-//              <p>PLease Fill in this form to create an account.</p>
-//              <hr>
-//              <label for= "email"><b>Email</b></label>
-//              <input type = "text" placeholder="Enter Eamil" name="psw" required></input>
-             
-//              <label for= "email"><b>Password</b></label>
-//              <input type ="password"placeholder="Enter Password" name="psw" required></input>
-//              </hr>
+function register(){
+    const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+    const [Name, setName] = useState("");
 
-//              <button type= "submit" class = "registerbtn">Register</button>
-//         </form>      
-//      </div>
-//     );
-// }
-// export default register;
+  
+	async function handleSubmit(event) {
+	  event.preventDefault();
+	  let response = await axios.post("http://localhost:5000/api/users/register",{
+		email: email,
+		password: password
+		});
+		console.log(response.data)
+		// localStorage.setItem('token', response.data);
+		window.location = '/';
+	}
+    return(
+        <div className="Register">
+            <form onSubmit={handleSubmit}>
+            <div className="form-group" size="lg" controlId="name">
+                <label>Name</label>
+                <input
+                autoFocus
+                type="Name"
+                value={Name}
+                onChange={(e) => setName(e.target.value)}
+                />
+            </div>
+            <div className="form-group" size="lg" controlId="email">
+                <label>Email</label>
+                <input
+                autoFocus
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                />
+            </div>
+            <div className="form-group" size="lg" controlId="password">
+                <label>Password</label>
+                <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                />
+            <p>Create an account</p>
+            <button type='submit' >Register</button>
+            </div>
+		</form>
+	  </div>
+	);
+}
+
+export default register;

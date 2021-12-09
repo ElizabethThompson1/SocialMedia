@@ -6,7 +6,7 @@ import TopBar from  "./components/Topbar/topBar";
 import LogOut from "./Pages/LogOut/logOut";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
-// import Register from "./Pages/Register/Register";
+import Register from "./Pages/Register/Register";
 // import Friends from "./components/Friends/friends";
 import jwt_decode from "jwt-decode";
 
@@ -50,12 +50,12 @@ class App extends Component {
                 <Switch>
                     <Route path='/' exact render={(props) => {
                         if(!user){
-                            return <Redirect to='/login' />
+                            return <Redirect to='/register' />
                         } else {
                             return <Home {...props} />
                         }
                     }} />
-                    {/* <Route path="/register" component={RegisterScreen} /> */}
+                    <Route path="/register" component={Register} />
                     <Route path="/login" component={Login} />
                     <Route path="/logout" component={LogOut} user={user}/>
                     {/* <Route path="/not-found" component={NotFound} /> */}
