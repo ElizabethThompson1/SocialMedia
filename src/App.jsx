@@ -8,7 +8,7 @@ import Home from "./Pages/Home/Home";
 import Register from "./Pages/Register/Register";
 // import Friends from "./components/Friends/friends";
 import jwt_decode from "jwt-decode";
-
+import Friends from "./components/Friends/Friends";
 
 class App extends Component {
     constructor(props){
@@ -57,6 +57,7 @@ class App extends Component {
                     <Route path="/register" component={Register} />
                     <Route path="/login" component={Login} />
                     <Route path="/logout" component={LogOut} user={user}/>
+                    <Route path="/friends" component={Friends} />
                     {/* <Route path="/not-found" component={NotFound} /> */}
                     {/* <Redirect to="/not-found"/> */}
                 </Switch>

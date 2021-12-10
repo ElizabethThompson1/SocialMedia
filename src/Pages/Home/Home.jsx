@@ -4,8 +4,7 @@
 // import "./home.css"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
- import Friends from '../../components/Friends/Friends';
-import Sidebar from "../../components/sidebar/Sidebar"
+
 
 function Home(){
    const [userProfile, setUserProfile] = useState("")
@@ -32,7 +31,7 @@ function Home(){
     return(
      <div>
         <h1> {userProfile.name}</h1>
-        <Sidebar/>  
+          
        
     </div>
 

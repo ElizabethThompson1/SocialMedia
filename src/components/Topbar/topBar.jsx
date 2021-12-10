@@ -12,7 +12,9 @@ function TopBar({user}){
                 {user && <h4>Welcome {user.username}</h4>}
                 <ul class="navbar-nav">
                 <li>
-                                <Friends/>
+                            <Link to='/allfriends'>
+                                <button>Get Friends</button>
+                            </Link>
                             </li>
                             {!user &&
                                 <React.Fragment>
