@@ -8,6 +8,9 @@ import axios from 'axios';
 
 function Home(){
    const [userProfile, setUserProfile] = useState("")
+   const [post, setPost] = useState (null)
+   const [img , setimg] = useState(null)
+   const[like, setlike] = useState(0)
 
    useEffect(() => {
       getCurrentUser()
@@ -25,13 +28,45 @@ function Home(){
       setUserProfile(response.data)
        console.log(response.data)
    }
- 
+  
+
+
+
+   async function handleSubmit(event) {
+       event.preventDefault();
+       let registerObject = {
+         Desc: post,
+         img: img,
+         like: like
+         };
+         debugger;
+       let response = await axios.post("http://localhost:5000/api/posts/", registerObject);
+         console.log(response.data)
+          localStorage.setItem('token', response.data);
+         window.location = '/login';
+   }
+
 
 
     return(
      <div>
         <h1> {userProfile.name}</h1>
-          
+         
+       <div className="Comment">
+           <form onSubmit={handleSubmit}>
+               <div class="card">
+               <div class="card-header">
+                   Post
+               </div>
+               <div class="card-body">
+                   <blockquote class="blockquote mb-0">
+                      <input></input>
+                   </blockquote>
+               </div>
+               </div>
+               <button type='submit' >Post</button>
+           </form>
+       </div>
        
     </div>
 
