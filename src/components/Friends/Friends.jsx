@@ -28,8 +28,8 @@ function Friends(){
     return(
     
         <div>
-        <button className = "LogOut-button" onClick={getAllFriends}>LogOut</button>
-    </div>
+            <button className = "getAllFriends" onClick={friends.friends}>LogOut</button>
+        </div>
     );
 }
 export default Friends;
