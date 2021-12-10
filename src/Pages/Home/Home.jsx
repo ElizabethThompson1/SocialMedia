@@ -60,11 +60,11 @@ function Home(){
                </div>
                <div class="card-body">
                    <blockquote class="blockquote mb-0">
-                      <input></input>
+                      <input></input>                     
+                     <button type='submit' >Post</button>
                    </blockquote>
                </div>
                </div>
-               <button type='submit' >Post</button>
            </form>
        </div>
        
