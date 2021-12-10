@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-
+import {Link} from "react-router-dom"
 
 function Friends(){
     const [friends, setFriends] = useState([])
@@ -28,7 +28,7 @@ function Friends(){
         <div>
           {/* <button className = "getAllFriends" onClick={getAllFriends}>Friends</button> */}
             {friends.length > 0 &&
-                <h1>{friends[0].friendId}</h1>
+              friends.map(friend => <h1>{friend.name} </h1> )  
             }
            
         </div>
