@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 
@@ -16,11 +16,11 @@ function Friends(){
        headers: {
           'x-auth-token': jwt
        }
-    } }
+    } 
     let response = await axios.get(`http://localhost:5000/api/users/allfriends`, configObject)
     setFriends(response.data)
      console.log(response.data)
- }
+    }
 
       
   
@@ -30,8 +30,6 @@ function Friends(){
         <div>
         <button className = "LogOut-button" onClick={getAllFriends}>LogOut</button>
     </div>
-
-)
     );
 }
 export default Friends;

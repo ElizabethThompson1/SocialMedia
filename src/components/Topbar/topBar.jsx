@@ -11,7 +11,7 @@ function TopBar({user}){
                 {user && <h4>Welcome {user.username}</h4>}
                 <ul class="navbar-nav">
                 <li>
-                                <Link to='/friends'>Friends</Link>
+                                <Link to='/allFriends'>Friends</Link>
                             </li>
                             {!user &&
                                 <React.Fragment>
