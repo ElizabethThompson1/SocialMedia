@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-function register(){
+function Register(){
     const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
     const [Name, setName] = useState("");
@@ -62,4 +62,4 @@ function register(){
 	);
 }
 
-export default register;
+export default Register;
