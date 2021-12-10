@@ -33,7 +33,7 @@ function Home(){
      <div>
         <h1> {userProfile.name}</h1>
         <Sidebar/>  
-        <Friends/>
+       
     </div>
 
     );

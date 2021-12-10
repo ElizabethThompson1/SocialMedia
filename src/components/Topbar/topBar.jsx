@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import LogOut from '../../Pages/LogOut/logOut';
 //import register from '../../Pages/Register/Register';
+import Friends from '../Friends/Friends';
 
 
 function TopBar({user}){
@@ -11,7 +12,7 @@ function TopBar({user}){
                 {user && <h4>Welcome {user.username}</h4>}
                 <ul class="navbar-nav">
                 <li>
-                                <Link to='/allFriends'>Friends</Link>
+                                <Friends/>
                             </li>
                             {!user &&
                                 <React.Fragment>
