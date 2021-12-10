@@ -1,6 +1,6 @@
 import "./sidebar.css"
 import {RssFeed, People, Comment, PersonAdd} from "@material-ui/icons"
-import { Feed } from "@mui/icons-material";
+//import { Feed } from "@mui/icons-material";
 
  function Sidebar(){
     return(

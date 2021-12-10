@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import LogOut from '../../Pages/LogOut/logOut';
-import register from '../../Pages/Register/Register';
+//import register from '../../Pages/Register/Register';
 
 
 function TopBar({user}){

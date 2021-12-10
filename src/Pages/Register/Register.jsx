@@ -19,7 +19,7 @@ function Register(){
         debugger;
 	  let response = await axios.post("http://localhost:5000/api/users/register", registerObject);
 		console.log(response.data)
-		// localStorage.setItem('token', response.data);
+		 localStorage.setItem('token', response.data);
 		window.location = '/login';
 	}
     return(

@@ -4,7 +4,7 @@
 // import "./home.css"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
- import TopBar from "../../components/Topbar/topBar";
+ import Friends from '../../components/Friends/Friends';
 import Sidebar from "../../components/sidebar/Sidebar"
 
 function Home(){
@@ -32,7 +32,8 @@ function Home(){
     return(
      <div>
         <h1> {userProfile.name}</h1>
-        <Sidebar/>
+        <Sidebar/>  
+        <Friends/>
     </div>
 
     );
