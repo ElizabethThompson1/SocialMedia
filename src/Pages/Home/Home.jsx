@@ -1,14 +1,14 @@
-// import TopBar from "../../components/Topbar/topBar";
 // import Sidebar from "../../components/sidebar/Sidebar";
 // import Feed from "../../components/feed/Feed";
 // import Rightbar from "../../components/rightbar/Rightbar";
 // import "./home.css"
-// import Login from "../Login/Login";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+ import TopBar from "../../components/Topbar/topBar";
+import Sidebar from "../../components/sidebar/Sidebar"
 
 function Home(){
-   const [userProfile, setUserProfile] = useState(null)
+   const [userProfile, setUserProfile] = useState("")
 
    useEffect(() => {
       getCurrentUser()
@@ -31,7 +31,8 @@ function Home(){
 
     return(
      <div>
-        <h1>Name: {userProfile.name}</h1>
+        <h1> {userProfile.name}</h1>
+        <Sidebar/>
     </div>
 
     );
