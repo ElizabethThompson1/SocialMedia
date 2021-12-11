@@ -23,41 +23,27 @@ function Register(){
 	}
 
     return(
-   
 
-        <div className="card" style={{width: "18rem"}}>
+        <div className="container">
+            <div class="row">
+              <div class="col">
+            </div>
+          <div className="card" style={{width: "18rem"}}>
             <div className="card-body">
-
-                <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group" size="lg" controlId="name">
                     <label className="form-label">
                         Name
-                    
-                        <input
-                        autoFocus
-                        type="Name"
-                        value={Name}
-                        onChange={(e) => setName(e.target.value)}
-                        />
+                    <input autoFocus type="Name" value={Name} onChange={(e) => setName(e.target.value)} />
                     </label>
                 </div>
                 <div className="form-group" size="lg" controlId="email">
                     <label>Email</label>
-                    <input
-                    autoFocus
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    />
+                    <input autoFocus type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className="form-group" size="lg" controlId="password">
                     <label>Password</label>
-                    <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="form-control"
-                    />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control"/>
                 <p>Create an account</p>
                 <button type='submit' >Register</button>
                 </div>
@@ -65,8 +51,10 @@ function Register(){
                 <Link to='/Login'>
                     <button className="btn btn-primary">Already a user? Login Here</button>
                 </Link>
-            </div>
-	  </div>
+             </div>
+	      </div>
+        </div>
+      </div>
 	);
 }
 

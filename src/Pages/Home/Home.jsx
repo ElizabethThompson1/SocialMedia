@@ -49,6 +49,7 @@ function Home() {
     getCurrentUser();
   }, [newPost]);
 
+
   return (
     <div>
       <h1> {userProfile && userProfile.name}</h1>
