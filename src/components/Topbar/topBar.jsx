@@ -7,10 +7,10 @@ import Friends from '../Friends/Friends';
 
 function TopBar({user}){
     return(
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarNav">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="collapse navbar-collapse" id="navbarNav">
                 {user && <h4>Welcome {user.username}</h4>}
-                <ul class="navbar-nav">
+                <ul className="navbar-nav">
                 <li>
                             <Link to='/allfriends'>
                                 <button>Get Friends</button>
