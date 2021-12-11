@@ -50,24 +50,32 @@ function Home(){
 
     return(
      <div>
+           <div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-md-6">
         <h1> {userProfile.name}</h1>
-         
+      
        <div className="Comment">
            <form onSubmit={handleSubmit}>
+         
                <div class="card">
                <div class="card-header">
                    Post
                </div>
                <div class="card-body">
-                   <blockquote class="blockquote mb-0">
+                   <blockquote class="blockquote mb-">
                       <input></input>                     
-                     <button type='submit' >Post</button>
+                     <button type='submit' >Post  </button>
+                     
+                     
                    </blockquote>
                </div>
                </div>
            </form>
+           </div>
        </div>
-       
+       </div>
     </div>
 
     );
