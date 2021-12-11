@@ -51,6 +51,10 @@ function Home() {
 
 
   return (
+    <div class="container">
+  <div class="row"></div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
     <div>
       <h1> {userProfile && userProfile.name}</h1>
       <div className="Comment">
@@ -69,6 +73,7 @@ function Home() {
                       onChange={(e) => setDesc(e.target.value)}
                     />
                     <button type="submit">post</button>
+                  
                     
                   </label>
                 </div>
@@ -90,8 +95,8 @@ function Home() {
             </>
           ))}
       </ul>
-      
-    </div>
+      </div>
+    </div></div>
   );
 }
 export default Home;
