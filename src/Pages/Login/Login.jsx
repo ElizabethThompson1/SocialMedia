@@ -23,7 +23,12 @@ function Login(props) {
 
   
 	return (
-	  <div className="Login">
+	  <div className="container">
+		  <div class="row">
+			  <div class="col">
+				  Enter Your Information
+			  </div>
+			  <div>
 		<form onSubmit={handleSubmit}>
 		  <div className="form-group" size="lg" controlId="email">
 			<label>Email</label>
@@ -33,7 +38,7 @@ function Login(props) {
 			  value={email}
 			  onChange={(e) => setEmail(e.target.value)}
 			/>
-		  </div>
+		  
 		  <div className="form-group" size="lg" controlId="password">
 			<label>Password</label>
 			<input
@@ -41,9 +46,14 @@ function Login(props) {
 			  value={password}
 			  onChange={(e) => setPassword(e.target.value)}
 			/>
+			</div>
 		  </div>
-		  <button type='submit' >Login</button>
+		  <div class="d-grid gap-2">
+		  <button class="btn btn-primary" type="buttom" >Login</button>
+		  </div>
 		</form>
+		</div>
+		</div>
 	  </div>
 	);
 }
