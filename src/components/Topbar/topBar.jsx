@@ -13,24 +13,31 @@ function TopBar({user}){
                 <ul className="navbar-nav">
                 <li>
                             <Link to='/allfriends'>
-                                <button>Get Friends</button>
+                                <button type="button" class="btn btn-outline-primary">Get Friends</button>
                             </Link>
                             </li>
                             {!user &&
                                 <React.Fragment>
                                     <li>
-                                        <Link to='/register'>Register</Link>
+                                        <Link to='/register'>
+                                        <button type="button"class="btn btn-outline-primary">Register</button>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to='/login'>Login</Link>
+                                        <Link to='/Login'>
+                                    <button type="button"class="btn btn-outline-primary"> Login </button>
+                                    </Link>
                                     </li>
                                 </React.Fragment>
                             }
                             {user &&
                                 <React.Fragment>
+                                   
                                     <li>
                                         <LogOut />
+                                        
                                     </li>
+                                    
                         </React.Fragment>                   
                     }
                 </ul>
