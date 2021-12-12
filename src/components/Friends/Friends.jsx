@@ -27,7 +27,7 @@ function Friends(){
     return(
         <div>
             <Link to='/'>Home</Link>
-          {/* <button className = "getAllFriends" onClick={getAllFriends}>Friends</button> */}
+          {/* {<button className = "getAllFriends" onClick={getAllFriends}>Friends</button> } */}
             {friends.length > 0 &&
               friends.map(friend => <h1>{friend.name} </h1> )  
             }
