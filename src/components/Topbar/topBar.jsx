@@ -24,15 +24,20 @@ function TopBar({user}){
                                         </Link>
                                     </li>
                                     <li>
+                                        <Link to='/Login'>
                                     <button type="button"class="btn btn-outline-primary"> Login </button>
+                                    </Link>
                                     </li>
                                 </React.Fragment>
                             }
                             {user &&
                                 <React.Fragment>
+                                   
                                     <li>
                                         <LogOut />
+                                        
                                     </li>
+                                    
                         </React.Fragment>                   
                     }
                 </ul>

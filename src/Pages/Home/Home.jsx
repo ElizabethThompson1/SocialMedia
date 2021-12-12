@@ -102,12 +102,16 @@ function Home() {
         {userProfile &&
           userProfile.posts?.map((post, i) => (
             <>
+            <h1>
               <li key={i}>{post.desc}</li>
+              </h1>
               <ul>
                 <li key={i}>{post.img}</li>
               </ul>
-              <ul>
+                
                 <li key={i}>{post.createdAt}</li>
+                
+              <ul>
               </ul>
             </>
           ))}
