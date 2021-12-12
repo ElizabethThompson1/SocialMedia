@@ -52,10 +52,6 @@ function Home() {
 
 
   return (
-    <div class="container">
-  <div class="row"></div>
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
     <div>
       <h1> {userProfile && userProfile.name}</h1>
       <div className="Comment">
@@ -87,7 +83,6 @@ function Home() {
                     </div>
                     </label>
                     <button type="submit">post</button>
-                  
                     
                   </label>
                 </div>
@@ -102,18 +97,22 @@ function Home() {
         {userProfile &&
           userProfile.posts?.map((post, i) => (
             <>
-              <li key={i}>{post.desc}</li>
+              <div className="card w-75">
+                <div className="cardcomment" >
+                <li key={i}>Comment:  {post.desc}</li>
               <ul>
-                <li key={i}>{post.img}</li>
+                  <li key={i}>Image{post.img}</li>
               </ul>
               <ul>
                 <li key={i}>{post.createdAt}</li>
               </ul>
+                </div>
+              </div>
             </>
           ))}
       </ul>
-      </div>
-    </div></div>
+      
+    </div>
   );
 }
 export default Home;
