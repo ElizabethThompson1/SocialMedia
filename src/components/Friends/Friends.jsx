@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-// import {Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 function Friends(){
     const [friends, setFriends] = useState([])
@@ -26,10 +26,12 @@ function Friends(){
 
     return(
         <div>
+            <Link to='/'>Home</Link>
           {/* <button className = "getAllFriends" onClick={getAllFriends}>Friends</button> */}
             {friends.length > 0 &&
               friends.map(friend => <h1>{friend.name} </h1> )  
             }
+        
            
         </div>
     );

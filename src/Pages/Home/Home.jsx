@@ -4,18 +4,18 @@
 // import "./home.css"
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Like from "../../components/Likes/Likes"
+// import Like from "../../components/Likes/Likes"
+
 
 function Home() {
   const [userProfile, setUserProfile] = useState();
   const [desc, setDesc] = useState("");
-  const [img, setimg] = useState("");
+  const [img, setImg] = useState("");
   const [like, setlike] = useState(0);
 
   const [newPost, setNewPost] = useState({});
 
   const handleSubmit = async (e) => {
-    // debugger;
     e.preventDefault();
     let registerPost = {
       desc: desc,
@@ -45,6 +45,7 @@ function Home() {
       .then((res) => setUserProfile(res.data));
   };
 
+
   useEffect(() => {
     getCurrentUser();
   }, [newPost]);
@@ -68,6 +69,19 @@ function Home() {
                       value={desc}
                       onChange={(e) => setDesc(e.target.value)}
                     />
+                    <label>
+                    Image
+                    <div>
+                    post
+                    <input
+                      autoFocus
+                      type="file"
+                      value={img}
+                      onChange={(e) => setImg(e.target.value)}
+                    />
+                      <img src={setImg}/>
+                    </div>
+                    </label>
                     <button type="submit">post</button>
                     
                   </label>
@@ -85,7 +99,10 @@ function Home() {
             <>
               <li key={i}>{post.desc}</li>
               <ul>
-                <li>{post.createdAt}</li>
+                <li key={i}>{post.img}</li>
+              </ul>
+              <ul>
+                <li key={i}>{post.createdAt}</li>
               </ul>
             </>
           ))}
