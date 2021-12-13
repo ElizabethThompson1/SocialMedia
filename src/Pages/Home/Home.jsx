@@ -5,15 +5,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import Like from "../../components/Likes/Likes"
+import {LikeButton, Provider, UpdownButton} from '@lyket/react'
 
 
 function Home() {
   const [userProfile, setUserProfile] = useState();
-  const [desc, setDesc] = useState("");
+  const [desc, setDesc,postId] = useState("");
   const [img, setImg] = useState("");
   const [like, setlike] = useState(0);
-
-  const [newPost, setNewPost] = useState({});
+  const [newPost, setNewPost,data,setData] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,6 +49,56 @@ function Home() {
   useEffect(() => {
     getCurrentUser();
   }, [newPost]);
+
+  //    async function likePost(){
+//      const jwt = localStorage.getItem("token");
+//      let config ={
+//        headers:{
+//          "x-auth-token": jwt,
+//        },
+//      };
+//     await axios
+//     .put("http://localhost:5000/api/like/",{like: postId.like + 1}, config)
+//     .then((res) => setlike(res.data));
+//     const newData = data.map(post =>{
+//       if(post._id==like._id){
+//         return setlike
+//       }else{
+//         return post
+//       }
+//     })
+//     setData(newData)
+// }
+
+
+useEffect(() => {
+  getCurrentUser();
+}, [newPost]);
+
+const likePost = (i) =>{
+  const jwt = localStorage.getItem("token");
+    fetch('/like', {
+      method:"put",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":"Bearer "+localStorage.getItem("jwt")
+      },
+      body:JSON.stringify({
+        postId: i
+      })
+    }).then(res=>res.json())
+    .then(setlike=>{
+      
+      const newData = data.map(post =>{
+        if(post._id==setlike._id){
+          return setlike
+        }else{
+          return post
+        }
+      })
+      setData(newData)
+    }) 
+}
 
 
   return (
@@ -102,6 +152,10 @@ function Home() {
                 <li key={i}>Comment:  {post.desc}</li>
               <ul>
                   <li key={i}>Image{post.img}</li>
+              </ul>
+              <ul>
+                <LikeButton onclick={likePost(post.i)}/>
+                <h6>{post.like.lenght}likes</h6>
               </ul>
               <ul>
                 <li key={i}>{post.createdAt}</li>
