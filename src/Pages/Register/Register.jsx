@@ -28,12 +28,12 @@ function Register(){
             <div class="row">
               <div class="col">
             </div>
-          <div className="card" style={{width: "18rem"}}>
+          <div className="card text-white bg-dark" style={{width: "18rem"}}>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="form-group" size="lg" controlId="name">
                     <label className="form-label">
-                        Name
+                        <h3>Name</h3>
                     <input autoFocus type="Name" value={Name} onChange={(e) => setName(e.target.value)} />
                     </label>
                 </div>
@@ -45,7 +45,7 @@ function Register(){
                     <label>Password</label>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control"/>
                 <p>Create an account</p>
-                <button type='submit' >Register</button>
+                <button class="bg-dark" type='submit' ><h3>Register</h3></button>
                 </div>
                 </form>
                 <Link to='/Login'>

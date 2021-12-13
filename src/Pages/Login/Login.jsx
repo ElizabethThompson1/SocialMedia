@@ -21,13 +21,13 @@ function Login(props) {
   return (
     <div className="container">
       <div class="row">
-        <div class="col">Enter Your Information</div>
+        <div class="col"><h3>Enter Your Information</h3></div>
         <div>
-          <div className="card" style={{ width: "18rem" }}>
+          <div className="card text-white bg-dark" style={{ width: "18rem" }}>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="form-group" size="lg" controlId="email">
-                  <label>Email</label>
+                  <label className="form-label">Email</label>
                   <input
                     autoFocus
                     type="email"
@@ -36,7 +36,7 @@ function Login(props) {
                   />
 
                   <div className="form-group" size="lg" controlId="password">
-                    <label>Password</label>
+                    <label className="form-label">Password</label>
                     <input
                       type="password"
                       value={password}
@@ -45,8 +45,8 @@ function Login(props) {
                   </div>
                 </div>
                 <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="buttom">
-                    Login
+                  <button class="btn btn-secondary" type="button">
+                    <h3>Login</h3>
                   </button>
                 </div>
               </form>
